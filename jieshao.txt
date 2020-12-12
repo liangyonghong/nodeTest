@@ -4,4 +4,7 @@
 安装指定版本 socket.io@2.2.0
 打开两个浏览器测试数据的同步更新
 
-3.
+3.github第三方登录
+用localhost:7001/login.html测试
+
+4.单点登录
