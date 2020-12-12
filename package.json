@@ -1,0 +1,23 @@
+{
+  "name": "nodeTest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "1http_huancunjizhi.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liangyonghong/nodeTest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liangyonghong/nodeTest/issues"
+  },
+  "homepage": "https://github.com/liangyonghong/nodeTest#readme",
+  "dependencies": {
+    "socket.io": "^2.2.0"
+  }
+}
