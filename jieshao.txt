@@ -1,10 +1,26 @@
 1.http缓存机制案例  本案例可以直接运行 不需要任何安装
+用的http搭建的服务，直接将内容写到页面里
+const http = require('http')
+http.createServer((req,res)=>{
+    const {url} = req
+    if(url === '/'){ //如果没有main.js的话，添加main.js
+        res.end(`<html></html>`)
+    }
+}).listen(3000,()=>{
+    console.log('Http Cache Test Run at '+ 3000)
+})
 
-2.socketio即时聊天工具
+2.socketio即时聊天工具 express搭建的服务
 安装指定版本 socket.io@2.2.0
 打开两个浏览器测试数据的同步更新
 
-3.github第三方登录
+有道云笔记：搭建服务器和跨域
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/index.html');
+});
+
+3.github第三方登录 koa搭建的服务
 用localhost:7001/login.html测试
+app.use(static(__dirname + '/'));
 
 4.单点登录
