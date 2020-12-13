@@ -24,3 +24,10 @@ app.get('/', function(req, res){
 app.use(static(__dirname + '/'));
 
 4.单点登录
+启动服务 然后分别启动三个服务：
+$ cd passport
+$ node app.js
+$ cd ../system
+$ PORT=8081 SERVER_NAME=a node app.js
+$ PORT=8082 SERVER_NAME=b node app.js
+
