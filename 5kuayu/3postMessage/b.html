@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    http://localhost:3000/a.html  
+<script>
+  window.onmessage = function(e){ //监听A发送过来的信息
+      console.log(e.data); //A页面给b页面发送的数据
+      e.source.postMessage('我不爱你',e.origin); //给A窗口发送信息
+  }  
+</script>
+</body>
+</html>
