@@ -1,0 +1,12 @@
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    (async () => {
+        const res = await axios.get("/api/users")
+        console.log('data',res.data)
+        document.writeln(`Response : ${JSON.stringify(res.data)}`)
+    })()
+
+    //最简单的异步请求
+    // const img = new Image()
+    // img.src='/api/users?abc=123'
+</script>
