@@ -1,0 +1,23 @@
+<!-- <script>
+    axios.defaults.baseURL = 'http://localhost:3000'
+    axios
+        .get("/users",)
+        .then(res => res.data)
+        .then(users => console.log(users));
+</script> -->
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    (async () => {
+        axios.defaults.withCredentials = true
+        axios.defaults.baseURL = 'http://localhost:3000'
+        const res = await axios.get("/users", {
+            headers: {
+                'X-Token': '123'
+            }
+        })
+        console.log('data', res.data)
+    })()
+</script>
+预检请求
+1111 调用users接口，在console中查看返回的数据

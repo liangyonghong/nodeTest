@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+打开任意命令窗口运行：curl -v http://www.baidu.com  <br>
+前5行  > request
+返回的应答部分 < response 
+http请求由三部分组成，分别是:请求行、消息报头、请求正文
+
+制造跨域，安装 npm i live-server -g
+注意：安装live-server后，新打开一个窗口直接运行live-server，就创建了一个跨域
+//或者通过baseURL方式
+axios.defaults.baseURL = 'http://localhost:3000'
+
+解决跨域的方法
+1.jsonp 由script标签发出的get请求不受同源策略限制
+2.代理服务器
+3.CORS 跨域资源共享（Cross Origin Resource Share）跨域资源共享
+预检请求
+zsh + iterm 多窗口终端 池建强 mac talk
+
+协议，域名，端口
+1jsonp实现原理:客户端向服务器发请求拿数据，同时把本地的一个函数传递给服务器，在本地创建一个script标签，src=‘127.0.0.1:4000/list?callback=func’ 全局函数function func(){}，服务器接收客户端的请求callback=func，准备数据data={},给客户端返回数据func('+JSON.stringify(data)+'),浏览器拿到数据，把字符串转为js表达式执行
+
+script，img，link，iframe，。。。这几个标签无跨域的限制
+jsonp需要服务器端的支持
+问题：jsonp只能处理get请求
+制造跨域条件，新建两个html文件，
+
+2.CORS跨域资源共享
+
+3.http proxy =>webpack webpack-dev-server
+webpack.config.js
+devServer:{
+    port:3000,
+    progress:true,
+    proxy:{
+        '/':{
+            target:'http://127.0.0.1:3001',
+            changeOrigin:true
+        }
+    }
+}
+
+4.nginx反向代理
+proxy服务器 www.lyh.cn  ---> www.lyh.com
+server{
+    listen 80
+    server_name www.lyh.com
+    location / {
+        proxy_pass www.lyh.cn //反向代理
+    }
+}
+
+5.postMessage MDN查询
+a页面和b页面通信，给子窗口发消息
+
+6.scoket.io即时通讯
+
+</body>
+</html>

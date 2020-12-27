@@ -4,11 +4,17 @@ const http = require('http')
 http.createServer((req,res)=>{
     const {url} = req
     if(url === '/'){ //如果没有main.js的话，添加main.js
-        res.end(`<html></html>`)
+        res.end(`<html>1111</html>`)
     }
 }).listen(3000,()=>{
     console.log('Http Cache Test Run at '+ 3000)
 })
+
+Express
+let express = require('express');
+let app = express();
+app.use(express.static(__dirname));
+app.listen(3000); 
 
 2.socketio即时聊天工具 express搭建的服务
 安装指定版本 socket.io@2.2.0

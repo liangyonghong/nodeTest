@@ -1,0 +1,9 @@
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    axios.defaults.baseURL = 'http://localhost:3000'
+    axios
+        .get("/users")
+        .then(res => res.data)
+        .then(users => console.log(users));
+</script>
+1111 调用users接口，在console中查看返回的数据
