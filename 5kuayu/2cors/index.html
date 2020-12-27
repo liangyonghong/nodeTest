@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   http://localhost:3000/index.html
+   3000的端口访问4000，需要启动server和server2
+</body>
+<script>
+let xhr = new XMLHttpRequest;
+
+document.cookie = 'name=lyh1';
+xhr.withCredentials = true;
+
+// console.log(xhr);
+xhr.open('PUT','http://localhost:4000/getData',true); //PUT是修改
+xhr.setRequestHeader('name','lyh');  //设置头
+xhr.onreadystatechange = function(){
+    if(xhr.readyState === 4){
+        if(xhr.status >= 200 && xhr.status < 300 || xhr.status === 304){
+            console.log(xhr.response);
+            console.log(xhr.getResponseHeader('name')); //打印后端设置的name
+        }
+    }
+}
+xhr.send();
+</script>
+</html>
