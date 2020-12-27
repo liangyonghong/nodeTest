@@ -1,0 +1,15 @@
+1.bodyparser_koa_post
+koa搭建服务
+用bodyparser接收post数据，并把填写的数据返回
+
+2.http
+http搭建服务
+启动服务以后，自动会打开html页面调用/api/users接口返回数据
+
+3.proxy_http+express_kuayu
+express搭建服务
+启动服务3000端口后打开html界面请求接口4000的跨域问题
+两种方式解决跨域
+App.js注释1，index.html注释2，切换index.js的proxy
+
+Form表单提交post数据

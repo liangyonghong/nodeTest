@@ -1,0 +1,5 @@
+const api = require('./api')
+// const proxy = require('./proxy')
+const proxy = require('./proxy1')
+api.listen(4000)
+proxy.listen(3000)
